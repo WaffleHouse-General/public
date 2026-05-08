@@ -21,12 +21,32 @@
             margin-top: -10px;
             margin-bottom: 20px;
         }
-        .mermaid {
+        .chart-container {
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 12px;
             margin: 20px auto;
-            max-width: 1400px;
+            max-width: 1200px;
+        }
+        .top-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+        .top-row .mermaid {
+            flex: 1;
+            max-width: 500px;
+        }
+        .middle-row, .bottom-row {
+            display: flex;
+            justify-content: center;
+        }
+        .arrow-down {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            margin: 10px 0;
         }
         .legend {
             max-width: 1000px;
@@ -74,16 +94,24 @@
     <h1>🧇 Waffle House Inc.</h1>
     <p class="subtitle">Organization Structure</p>
     
-    <div class="mermaid">
+    <div class="chart-container">
+        <!-- Top Row: Owners and Board side by side -->
+        <div class="top-row">
+            <div class="mermaid">
 flowchart TB
     subgraph OWNERS["👑 OWNERS"]
         direction LR
-        JACK["<b>JACK</b><br/>Co-Owner<br/>Strategy & Infra"]
-        YASH["<b>YASH</b><br/>Co-Owner<br/>Product & Research"]
-        LUKE["<b>LUKE</b><br/>Co-Owner<br/>Business & Content"]
+        JACK["<b>JACK</b><br/>Co-Owner<br/>Strategy"]
+        YASH["<b>YASH</b><br/>Co-Owner<br/>Product"]
+        LUKE["<b>LUKE</b><br/>Co-Owner<br/>Business"]
     end
-
-    subgraph BOARD["🏛️ BOARD OF DIRECTORS (The Council)"]
+    style JACK fill:#9b59b6,color:#fff
+    style YASH fill:#9b59b6,color:#fff
+    style LUKE fill:#9b59b6,color:#fff
+            </div>
+            <div class="mermaid">
+flowchart TB
+    subgraph BOARD["🏛️ BOARD OF DIRECTORS"]
         direction LR
         SK["Skeptic"]
         RS["Researcher"]
@@ -91,37 +119,45 @@ flowchart TB
         CR["Critic"]
         SY["Synthesizer"]
     end
+    style SK fill:#264653,color:#fff
+    style RS fill:#264653,color:#fff
+    style PR fill:#264653,color:#fff
+    style CR fill:#264653,color:#fff
+    style SY fill:#264653,color:#fff
+            </div>
+        </div>
 
-    OWNERS ~~~ BOARD
+        <div class="arrow-down">⬇️</div>
 
+        <!-- Middle Row: CEO -->
+        <div class="middle-row">
+            <div class="mermaid">
+flowchart TB
     subgraph EXEC["🧇 EXECUTIVE"]
         WB["<b>WAFFLEBOT</b><br/>CEO<br/>Central Orchestrator"]
     end
+    style WB fill:#f4a261,color:#000
+            </div>
+        </div>
 
+        <div class="arrow-down">⬇️</div>
+
+        <!-- Bottom Row: C-Suite -->
+        <div class="bottom-row">
+            <div class="mermaid">
+flowchart TB
     subgraph CSUITE["👔 C-SUITE"]
         direction LR
         TAD["<b>TAD</b><br/>CIO<br/>Intelligence"]
         MAX["<b>MAX</b><br/>CRO<br/>Revenue"]
         KEV["<b>KEV</b><br/>CTO<br/>Technology"]
     end
-
-    OWNERS --> EXEC
-    BOARD --> EXEC
-    EXEC --> CSUITE
     TAD --> MAX --> KEV
-
-    style JACK fill:#9b59b6,color:#fff
-    style YASH fill:#9b59b6,color:#fff
-    style LUKE fill:#9b59b6,color:#fff
-    style WB fill:#f4a261,color:#000
     style TAD fill:#3498db,color:#fff
     style MAX fill:#e74c3c,color:#fff
     style KEV fill:#2ecc71,color:#fff
-    style SK fill:#264653,color:#fff
-    style RS fill:#264653,color:#fff
-    style PR fill:#264653,color:#fff
-    style CR fill:#264653,color:#fff
-    style SY fill:#264653,color:#fff
+            </div>
+        </div>
     </div>
 
     <div class="legend">
@@ -154,9 +190,9 @@ flowchart TB
 
         <div class="legend-item">
             <h3>👔 C-SUITE</h3>
-            <p><b>TAD (CIO)</b> - Chief Intelligence Officer. Opportunity discovery, market research, lead generation, TikTok workflows.</p>
-            <p><b>MAX (CRO)</b> - Chief Revenue Officer. Sales, outreach, client management, payment collection, QA. <i>(Not yet built)</i></p>
-            <p><b>KEV (CTO)</b> - Chief Technology Officer. Code execution, website development, GitHub, deployments.</p>
+            <p><b>TAD (CIO)</b> - Chief Intelligence Officer. Opportunity discovery, market research, lead generation.</p>
+            <p><b>MAX (CRO)</b> - Chief Revenue Officer. Sales, outreach, client management. <i>(Not yet built)</i></p>
+            <p><b>KEV (CTO)</b> - Chief Technology Officer. Code execution, deployments, GitHub.</p>
         </div>
 
         <div class="legend-item">
@@ -171,8 +207,7 @@ flowchart TB
             theme: 'default',
             flowchart: {
                 useMaxWidth: true,
-                htmlLabels: true,
-                curve: 'basis'
+                htmlLabels: true
             }
         });
     </script>
