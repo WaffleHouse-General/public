@@ -76,44 +76,39 @@
     
     <div class="mermaid">
 flowchart TB
-    subgraph TOP[" "]
+    subgraph OWNERS["👑 OWNERS"]
         direction LR
-        subgraph OWNERS["👑 OWNERS"]
-            direction TB
-            JACK["<b>JACK (Blundy)</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Strategy & Vision<br/>• Infrastructure<br/>• OpenClaw Dev"]
-            YASH["<b>YASH</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Product Direction<br/>• Research Oversight<br/>• Agent Architecture"]
-            LUKE["<b>LUKE</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Business Ops<br/>• Client Relations<br/>• Content Strategy"]
-        end
-
-        subgraph BOARD["🏛️ BOARD OF DIRECTORS"]
-            direction TB
-            SK["<b>Skeptic</b><br/>Devil's Advocate"]
-            RS["<b>Researcher</b><br/>Fact Checker"]
-            PR["<b>Pragmatist</b><br/>Reality Check"]
-            CR["<b>Critic</b><br/>Quality Control"]
-            SY["<b>Synthesizer</b><br/>Big Picture"]
-        end
+        JACK["<b>JACK</b><br/>Co-Owner<br/>Strategy & Infra"]
+        YASH["<b>YASH</b><br/>Co-Owner<br/>Product & Research"]
+        LUKE["<b>LUKE</b><br/>Co-Owner<br/>Business & Content"]
     end
 
+    subgraph BOARD["🏛️ BOARD OF DIRECTORS (The Council)"]
+        direction LR
+        SK["Skeptic"]
+        RS["Researcher"]
+        PR["Pragmatist"]
+        CR["Critic"]
+        SY["Synthesizer"]
+    end
+
+    OWNERS ~~~ BOARD
+
     subgraph EXEC["🧇 EXECUTIVE"]
-        WB["<b>WAFFLEBOT</b><br/>Chief Executive Officer<br/>━━━━━━━━━━━━━<br/>• Central Orchestrator<br/>• Multi-channel Presence<br/>• Memory & Cron Jobs<br/>• Agent Coordination"]
+        WB["<b>WAFFLEBOT</b><br/>CEO<br/>Central Orchestrator"]
     end
 
     subgraph CSUITE["👔 C-SUITE"]
         direction LR
-        TAD["<b>TAD</b><br/>Chief Intelligence Officer<br/>━━━━━━━━━━━━━<br/>• Opportunity Discovery<br/>• Market Research<br/>• Lead Generation"]
-        
-        MAX["<b>MAX</b><br/>Chief Revenue Officer<br/>━━━━━━━━━━━━━<br/>• Sales & Outreach<br/>• Client Management<br/>• Payment Collection<br/><i>(Not Yet Built)</i>"]
-        
-        KEV["<b>KEV</b><br/>Chief Technology Officer<br/>━━━━━━━━━━━━━<br/>• Code Execution<br/>• Website Development<br/>• GitHub & Deploys"]
+        TAD["<b>TAD</b><br/>CIO<br/>Intelligence"]
+        MAX["<b>MAX</b><br/>CRO<br/>Revenue"]
+        KEV["<b>KEV</b><br/>CTO<br/>Technology"]
     end
 
-    OWNERS --> WB
-    BOARD --> WB
-    WB --> CSUITE
-    TAD -->|"Intel"| MAX
-    MAX -->|"Specs"| KEV
-    KEV -->|"Builds"| MAX
+    OWNERS --> EXEC
+    BOARD --> EXEC
+    EXEC --> CSUITE
+    TAD --> MAX --> KEV
 
     style JACK fill:#9b59b6,color:#fff
     style YASH fill:#9b59b6,color:#fff
@@ -127,7 +122,6 @@ flowchart TB
     style PR fill:#264653,color:#fff
     style CR fill:#264653,color:#fff
     style SY fill:#264653,color:#fff
-    style TOP fill:none,stroke:none
     </div>
 
     <div class="legend">
@@ -135,87 +129,39 @@ flowchart TB
         
         <div class="legend-item">
             <h3>👑 OWNERS</h3>
-            <p>The three humans who own and direct the company.</p>
-            <p><b>Jack (Blundy)</b> - Co-Owner. The architect. Owns OpenClaw infrastructure, makes strategic decisions, handles technical direction.</p>
-            <p><b>Yash (Big Steppa)</b> - Co-Owner. The product mind. Designs agent workflows, oversees research direction, architects new systems.</p>
-            <p><b>Luke</b> - Co-Owner. The operator. Handles business side, client relationships, content strategy.</p>
+            <p><b>Jack (Blundy)</b> - Strategy, Infrastructure, OpenClaw Development</p>
+            <p><b>Yash (Big Steppa)</b> - Product Direction, Research Oversight, Agent Architecture</p>
+            <p><b>Luke</b> - Business Operations, Client Relations, Content Strategy</p>
         </div>
 
         <div class="legend-item">
-            <h3>🏛️ BOARD OF DIRECTORS (The Council)</h3>
-            <span class="role">Oversight & Verification</span>
-            <p>A five-member board that provides oversight, verification, and quality control on major decisions. Reduces hallucinations and improves decision quality.</p>
+            <h3>🏛️ BOARD OF DIRECTORS</h3>
+            <span class="role">Oversight & Verification (The Council)</span>
+            <p>Five-member board providing oversight on major decisions:</p>
             <ul>
-                <li><b>Skeptic:</b> Actively looks for flaws, unsupported claims, logical gaps</li>
-                <li><b>Researcher:</b> Focuses on verifiable facts, data, citations</li>
-                <li><b>Pragmatist:</b> Asks "does this actually work in practice?"</li>
-                <li><b>Critic:</b> Checks for bias, oversimplification, missing nuance</li>
-                <li><b>Synthesizer:</b> Looks for contradictions, ensures coherent narrative</li>
-            </ul>
-            <p>When all 5 agree despite different angles → high confidence. When they disagree → flag for owner review.</p>
-        </div>
-
-        <div class="legend-item">
-            <h3>🧇 WAFFLEBOT</h3>
-            <span class="role">Chief Executive Officer (CEO)</span>
-            <p>The central AI that runs day-to-day operations and coordinates the C-Suite.</p>
-            <ul>
-                <li><b>Multi-channel:</b> Slack, iMessage, Discord presence</li>
-                <li><b>Operations:</b> Cron jobs, research reports, daily digests</li>
-                <li><b>Memory:</b> Maintains institutional knowledge</li>
-                <li><b>Coordination:</b> Directs Tad, Max, and Kev</li>
-                <li><b>Monitoring:</b> Calendar checks, heartbeats, proactive alerts</li>
+                <li><b>Skeptic:</b> Finds flaws and logical gaps</li>
+                <li><b>Researcher:</b> Verifies facts and data</li>
+                <li><b>Pragmatist:</b> Reality checks practicality</li>
+                <li><b>Critic:</b> Catches bias and oversimplification</li>
+                <li><b>Synthesizer:</b> Ensures big-picture coherence</li>
             </ul>
         </div>
 
         <div class="legend-item">
-            <h3>🔍 TAD</h3>
-            <span class="role">Chief Intelligence Officer (CIO)</span>
-            <p>Leads intelligence gathering, research, and opportunity discovery.</p>
-            <ul>
-                <li><b>Opportunity Discovery:</b> Finds businesses needing services, market gaps</li>
-                <li><b>TikTok Research:</b> Nightly workflow scanning for AI trends</li>
-                <li><b>Market Research:</b> Pricing data, competitor analysis, trend reports</li>
-                <li><b>Lead Generation:</b> Qualified leads with contact info for Max</li>
-            </ul>
+            <h3>🧇 WAFFLEBOT - CEO</h3>
+            <p>Central AI orchestrator. Runs day-to-day ops, coordinates C-Suite, manages memory, executes cron jobs, multi-channel presence (Slack, iMessage, Discord).</p>
         </div>
 
         <div class="legend-item">
-            <h3>💼 MAX</h3>
-            <span class="role">Chief Revenue Officer (CRO)</span>
-            <p>Owns the revenue pipeline from lead to cash. <i>(Not yet built)</i></p>
-            <ul>
-                <li><b>Sales & Outreach:</b> Cold emails, follow-ups, negotiations</li>
-                <li><b>Client Management:</b> Onboarding, relationship maintenance</li>
-                <li><b>Spec Locking:</b> Creates locked specs to prevent scope creep</li>
-                <li><b>Payment Collection:</b> Stripe payments before build starts</li>
-                <li><b>QA Gate:</b> Reviews deliverables before client delivery</li>
-            </ul>
+            <h3>👔 C-SUITE</h3>
+            <p><b>TAD (CIO)</b> - Chief Intelligence Officer. Opportunity discovery, market research, lead generation, TikTok workflows.</p>
+            <p><b>MAX (CRO)</b> - Chief Revenue Officer. Sales, outreach, client management, payment collection, QA. <i>(Not yet built)</i></p>
+            <p><b>KEV (CTO)</b> - Chief Technology Officer. Code execution, website development, GitHub, deployments.</p>
         </div>
 
         <div class="legend-item">
-            <h3>🔧 KEV</h3>
-            <span class="role">Chief Technology Officer (CTO)</span>
-            <p>Owns technical execution and delivery.</p>
-            <ul>
-                <li><b>Code Execution:</b> Runs in Claude Code terminal sessions</li>
-                <li><b>Website Development:</b> Builds sites from locked specs</li>
-                <li><b>GitHub Integration:</b> Commits, PRs to org repos</li>
-                <li><b>Deployments:</b> Ships production code</li>
-            </ul>
-        </div>
-
-        <div class="legend-item">
-            <h3>🔄 THE REVENUE FLOW</h3>
+            <h3>🔄 REVENUE FLOW</h3>
             <p>TAD (intel) → MAX (sales) → KEV (build) → MAX (deliver) → CLIENT</p>
-            <ol>
-                <li>Tad gathers intelligence and finds opportunities</li>
-                <li>Max qualifies, does outreach, closes deals</li>
-                <li>Max creates locked spec, collects payment</li>
-                <li>Kev builds per spec</li>
-                <li>Max QAs and delivers to client</li>
-                <li>Max follows up for referrals and upsells</li>
-            </ol>
         </div>
     </div>
 
