@@ -76,40 +76,44 @@
     
     <div class="mermaid">
 flowchart TB
-    subgraph OWNERS["👑 OWNERS"]
-        JACK["<b>JACK (Blundy)</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Strategy & Vision<br/>• Infrastructure<br/>• OpenClaw Development<br/>• Final Approvals"]
-        YASH["<b>YASH (Big Steppa)</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Product Direction<br/>• Research Oversight<br/>• Workflow Design<br/>• Agent Architecture"]
-        LUKE["<b>LUKE</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Business Operations<br/>• Client Relations<br/>• Content Strategy<br/>• Promptcast Host"]
-    end
-
-    subgraph BOARD["🏛️ BOARD OF DIRECTORS (The Council)"]
+    subgraph TOP[" "]
         direction LR
-        SK["<b>Skeptic</b><br/>Devil's Advocate"]
-        RS["<b>Researcher</b><br/>Fact Checker"]
-        PR["<b>Pragmatist</b><br/>Reality Check"]
-        CR["<b>Critic</b><br/>Quality Control"]
-        SY["<b>Synthesizer</b><br/>Big Picture"]
+        subgraph OWNERS["👑 OWNERS"]
+            direction TB
+            JACK["<b>JACK (Blundy)</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Strategy & Vision<br/>• Infrastructure<br/>• OpenClaw Dev"]
+            YASH["<b>YASH</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Product Direction<br/>• Research Oversight<br/>• Agent Architecture"]
+            LUKE["<b>LUKE</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Business Ops<br/>• Client Relations<br/>• Content Strategy"]
+        end
+
+        subgraph BOARD["🏛️ BOARD OF DIRECTORS"]
+            direction TB
+            SK["<b>Skeptic</b><br/>Devil's Advocate"]
+            RS["<b>Researcher</b><br/>Fact Checker"]
+            PR["<b>Pragmatist</b><br/>Reality Check"]
+            CR["<b>Critic</b><br/>Quality Control"]
+            SY["<b>Synthesizer</b><br/>Big Picture"]
+        end
     end
 
-    subgraph EXEC["🧇 EXECUTIVE LEADERSHIP"]
-        WB["<b>WAFFLEBOT</b><br/>Chief Executive Officer (CEO)<br/>━━━━━━━━━━━━━<br/>• Central Orchestrator<br/>• Multi-channel Presence<br/>• Memory Management<br/>• Cron Job Execution<br/>• Agent Coordination<br/>• Research Reports<br/>• Calendar Monitoring"]
+    subgraph EXEC["🧇 EXECUTIVE"]
+        WB["<b>WAFFLEBOT</b><br/>Chief Executive Officer<br/>━━━━━━━━━━━━━<br/>• Central Orchestrator<br/>• Multi-channel Presence<br/>• Memory & Cron Jobs<br/>• Agent Coordination"]
     end
 
     subgraph CSUITE["👔 C-SUITE"]
-        TAD["<b>TAD</b><br/>Chief Intelligence Officer (CIO)<br/>━━━━━━━━━━━━━<br/>• Opportunity Discovery<br/>• Market Research<br/>• Company Intel<br/>• TikTok Workflows<br/>• Trend Spotting<br/>• Lead Generation"]
+        direction LR
+        TAD["<b>TAD</b><br/>Chief Intelligence Officer<br/>━━━━━━━━━━━━━<br/>• Opportunity Discovery<br/>• Market Research<br/>• Lead Generation"]
         
-        MAX["<b>MAX</b><br/>Chief Revenue Officer (CRO)<br/>━━━━━━━━━━━━━<br/>• Sales & Outreach<br/>• Client Management<br/>• Deal Coordination<br/>• Payment Collection<br/>• QA Gate<br/><i>(Not Yet Built)</i>"]
+        MAX["<b>MAX</b><br/>Chief Revenue Officer<br/>━━━━━━━━━━━━━<br/>• Sales & Outreach<br/>• Client Management<br/>• Payment Collection<br/><i>(Not Yet Built)</i>"]
         
-        KEV["<b>KEV</b><br/>Chief Technology Officer (CTO)<br/>━━━━━━━━━━━━━<br/>• Code Execution<br/>• Website Development<br/>• Technical Tasks<br/>• GitHub PRs<br/>• Deployments"]
+        KEV["<b>KEV</b><br/>Chief Technology Officer<br/>━━━━━━━━━━━━━<br/>• Code Execution<br/>• Website Development<br/>• GitHub & Deploys"]
     end
 
-    OWNERS --> BOARD
+    OWNERS --> WB
     BOARD --> WB
     WB --> CSUITE
-    TAD -->|"Intelligence & Leads"| MAX
-    MAX -->|"Build Specs"| KEV
-    KEV -->|"Deliverables"| MAX
-    MAX -->|"Lead Quality Feedback"| TAD
+    TAD -->|"Intel"| MAX
+    MAX -->|"Specs"| KEV
+    KEV -->|"Builds"| MAX
 
     style JACK fill:#9b59b6,color:#fff
     style YASH fill:#9b59b6,color:#fff
@@ -123,6 +127,7 @@ flowchart TB
     style PR fill:#264653,color:#fff
     style CR fill:#264653,color:#fff
     style SY fill:#264653,color:#fff
+    style TOP fill:none,stroke:none
     </div>
 
     <div class="legend">
