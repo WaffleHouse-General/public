@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waffle House Organization Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #f4a261;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+        .mermaid {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 1400px;
+        }
+        .legend {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .legend h2 {
+            color: #f4a261;
+            margin-top: 0;
+        }
+        .legend-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: #1a1a2e;
+            border-radius: 8px;
+            border-left: 4px solid #f4a261;
+        }
+        .legend-item h3 {
+            margin: 0 0 10px 0;
+            color: #e9c46a;
+        }
+        .legend-item .role {
+            color: #f4a261;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .legend-item p {
+            margin: 5px 0;
+            color: #ccc;
+            line-height: 1.5;
+        }
+        .legend-item ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .legend-item li {
+            color: #aaa;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧇 Waffle House Inc.</h1>
+    <p class="subtitle">Organization Structure</p>
+    
+    <div class="mermaid">
+flowchart TB
+    subgraph OWNERS["👑 OWNERS"]
+        JACK["<b>JACK (Blundy)</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Strategy & Vision<br/>• Infrastructure<br/>• OpenClaw Development<br/>• Final Approvals"]
+        YASH["<b>YASH (Big Steppa)</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Product Direction<br/>• Research Oversight<br/>• Workflow Design<br/>• Agent Architecture"]
+        LUKE["<b>LUKE</b><br/>Co-Owner<br/>━━━━━━━━━━━━━<br/>• Business Operations<br/>• Client Relations<br/>• Content Strategy<br/>• Promptcast Host"]
+    end
+
+    subgraph BOARD["🏛️ BOARD OF DIRECTORS (The Council)"]
+        direction LR
+        SK["<b>Skeptic</b><br/>Devil's Advocate"]
+        RS["<b>Researcher</b><br/>Fact Checker"]
+        PR["<b>Pragmatist</b><br/>Reality Check"]
+        CR["<b>Critic</b><br/>Quality Control"]
+        SY["<b>Synthesizer</b><br/>Big Picture"]
+    end
+
+    subgraph EXEC["🧇 EXECUTIVE LEADERSHIP"]
+        WB["<b>WAFFLEBOT</b><br/>Chief Executive Officer (CEO)<br/>━━━━━━━━━━━━━<br/>• Central Orchestrator<br/>• Multi-channel Presence<br/>• Memory Management<br/>• Cron Job Execution<br/>• Agent Coordination<br/>• Research Reports<br/>• Calendar Monitoring"]
+    end
+
+    subgraph CSUITE["👔 C-SUITE"]
+        TAD["<b>TAD</b><br/>Chief Intelligence Officer (CIO)<br/>━━━━━━━━━━━━━<br/>• Opportunity Discovery<br/>• Market Research<br/>• Company Intel<br/>• TikTok Workflows<br/>• Trend Spotting<br/>• Lead Generation"]
+        
+        MAX["<b>MAX</b><br/>Chief Revenue Officer (CRO)<br/>━━━━━━━━━━━━━<br/>• Sales & Outreach<br/>• Client Management<br/>• Deal Coordination<br/>• Payment Collection<br/>• QA Gate<br/><i>(Not Yet Built)</i>"]
+        
+        KEV["<b>KEV</b><br/>Chief Technology Officer (CTO)<br/>━━━━━━━━━━━━━<br/>• Code Execution<br/>• Website Development<br/>• Technical Tasks<br/>• GitHub PRs<br/>• Deployments"]
+    end
+
+    OWNERS --> BOARD
+    BOARD --> WB
+    WB --> CSUITE
+    TAD -->|"Intelligence & Leads"| MAX
+    MAX -->|"Build Specs"| KEV
+    KEV -->|"Deliverables"| MAX
+    MAX -->|"Lead Quality Feedback"| TAD
+
+    style JACK fill:#9b59b6,color:#fff
+    style YASH fill:#9b59b6,color:#fff
+    style LUKE fill:#9b59b6,color:#fff
+    style WB fill:#f4a261,color:#000
+    style TAD fill:#3498db,color:#fff
+    style MAX fill:#e74c3c,color:#fff
+    style KEV fill:#2ecc71,color:#fff
+    style SK fill:#264653,color:#fff
+    style RS fill:#264653,color:#fff
+    style PR fill:#264653,color:#fff
+    style CR fill:#264653,color:#fff
+    style SY fill:#264653,color:#fff
+    </div>
+
+    <div class="legend">
+        <h2>📋 Role Descriptions</h2>
+        
+        <div class="legend-item">
+            <h3>👑 OWNERS</h3>
+            <p>The three humans who own and direct the company.</p>
+            <p><b>Jack (Blundy)</b> - Co-Owner. The architect. Owns OpenClaw infrastructure, makes strategic decisions, handles technical direction.</p>
+            <p><b>Yash (Big Steppa)</b> - Co-Owner. The product mind. Designs agent workflows, oversees research direction, architects new systems.</p>
+            <p><b>Luke</b> - Co-Owner. The operator. Handles business side, client relationships, content strategy.</p>
+        </div>
+
+        <div class="legend-item">
+            <h3>🏛️ BOARD OF DIRECTORS (The Council)</h3>
+            <span class="role">Oversight & Verification</span>
+            <p>A five-member board that provides oversight, verification, and quality control on major decisions. Reduces hallucinations and improves decision quality.</p>
+            <ul>
+                <li><b>Skeptic:</b> Actively looks for flaws, unsupported claims, logical gaps</li>
+                <li><b>Researcher:</b> Focuses on verifiable facts, data, citations</li>
+                <li><b>Pragmatist:</b> Asks "does this actually work in practice?"</li>
+                <li><b>Critic:</b> Checks for bias, oversimplification, missing nuance</li>
+                <li><b>Synthesizer:</b> Looks for contradictions, ensures coherent narrative</li>
+            </ul>
+            <p>When all 5 agree despite different angles → high confidence. When they disagree → flag for owner review.</p>
+        </div>
+
+        <div class="legend-item">
+            <h3>🧇 WAFFLEBOT</h3>
+            <span class="role">Chief Executive Officer (CEO)</span>
+            <p>The central AI that runs day-to-day operations and coordinates the C-Suite.</p>
+            <ul>
+                <li><b>Multi-channel:</b> Slack, iMessage, Discord presence</li>
+                <li><b>Operations:</b> Cron jobs, research reports, daily digests</li>
+                <li><b>Memory:</b> Maintains institutional knowledge</li>
+                <li><b>Coordination:</b> Directs Tad, Max, and Kev</li>
+                <li><b>Monitoring:</b> Calendar checks, heartbeats, proactive alerts</li>
+            </ul>
+        </div>
+
+        <div class="legend-item">
+            <h3>🔍 TAD</h3>
+            <span class="role">Chief Intelligence Officer (CIO)</span>
+            <p>Leads intelligence gathering, research, and opportunity discovery.</p>
+            <ul>
+                <li><b>Opportunity Discovery:</b> Finds businesses needing services, market gaps</li>
+                <li><b>TikTok Research:</b> Nightly workflow scanning for AI trends</li>
+                <li><b>Market Research:</b> Pricing data, competitor analysis, trend reports</li>
+                <li><b>Lead Generation:</b> Qualified leads with contact info for Max</li>
+            </ul>
+        </div>
+
+        <div class="legend-item">
+            <h3>💼 MAX</h3>
+            <span class="role">Chief Revenue Officer (CRO)</span>
+            <p>Owns the revenue pipeline from lead to cash. <i>(Not yet built)</i></p>
+            <ul>
+                <li><b>Sales & Outreach:</b> Cold emails, follow-ups, negotiations</li>
+                <li><b>Client Management:</b> Onboarding, relationship maintenance</li>
+                <li><b>Spec Locking:</b> Creates locked specs to prevent scope creep</li>
+                <li><b>Payment Collection:</b> Stripe payments before build starts</li>
+                <li><b>QA Gate:</b> Reviews deliverables before client delivery</li>
+            </ul>
+        </div>
+
+        <div class="legend-item">
+            <h3>🔧 KEV</h3>
+            <span class="role">Chief Technology Officer (CTO)</span>
+            <p>Owns technical execution and delivery.</p>
+            <ul>
+                <li><b>Code Execution:</b> Runs in Claude Code terminal sessions</li>
+                <li><b>Website Development:</b> Builds sites from locked specs</li>
+                <li><b>GitHub Integration:</b> Commits, PRs to org repos</li>
+                <li><b>Deployments:</b> Ships production code</li>
+            </ul>
+        </div>
+
+        <div class="legend-item">
+            <h3>🔄 THE REVENUE FLOW</h3>
+            <p>TAD (intel) → MAX (sales) → KEV (build) → MAX (deliver) → CLIENT</p>
+            <ol>
+                <li>Tad gathers intelligence and finds opportunities</li>
+                <li>Max qualifies, does outreach, closes deals</li>
+                <li>Max creates locked spec, collects payment</li>
+                <li>Kev builds per spec</li>
+                <li>Max QAs and delivers to client</li>
+                <li>Max follows up for referrals and upsells</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
